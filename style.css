@@ -1,13 +1,13 @@
-@page{
+@page {
   size: letter portrait;
   margin: 0;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
-:root{
+:root {
   --page-width: 8.5in;
   --page-height: 11in;
   --main-width: 6.4in;
@@ -36,43 +36,51 @@
   --gray-medium: #888;
 }
 
-body{
+body {
   width: var(--page-width);
   height: var(--page-height);
   margin: 0;
-  font-family: "Open Sans", sans-serif; 
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   line-height: 1.3;
   color: #444;
   hyphens: auto;
 }
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
   margin: 0;
 }
 
-h1, h2, h3, h4{
+h1,
+h2,
+h3,
+h4 {
   font-weight: 300;
 }
 
-h1, h3, h4{
+h1,
+h3,
+h4 {
   color: var(--color-dark);
 }
 
-li{
+li {
   list-style-type: none;
 }
 
-#main{
+#main {
   float: left;
   width: var(--main-width);
   padding: 0.25in 0.25in 0 0.25in;
   font-size: 8pt;
 }
 
-#sidebar{
+#sidebar {
   float: right;
-  position: relative; /* for disclaimer */
+  position: relative;
+  /* for disclaimer */
   width: var(--sidebar-width);
   height: 100%;
   padding: 0.6in var(--sidebar-horizontal-padding);
@@ -83,36 +91,41 @@ li{
 /* main */
 
 /** big title **/
-#title{
+#title {
   position: relative;
   left: 0.55in;
   margin-bottom: 0.3in;
   line-height: 1.2;
 }
 
-#title h1{
+#title h1 {
   font-weight: 300;
   font-size: 18pt;
   line-height: 1.5;
   color: var(--color-dark);
 }
 
-#title h1 strong{
+#title h1 strong {
   margin: auto 2pt auto 4pt;
   font-weight: 600;
 }
 
-.subtitle{
+#title .professional-title {
+  color: var(--gray-medium);
+  font-size: 14pt;
+}
+
+.subtitle {
   font-size: 10pt;
 }
 
 /*** categorial blocks ***/
 
-.main-block{
+.main-block {
   margin-top: 0.1in;
 }
 
-#main h2{
+#main h2 {
   position: relative;
   top: var(--row-blocks-padding-top);
   /* XXX: 0.5px for aligning fx printing */
@@ -122,17 +135,19 @@ li{
   color: var(--gray-medium);
 }
 
-#main h2 > i{
+#main h2>i {
   /* use absolute position to prevent icon's width from misaligning title */
   /* assigning a fixed width here is no better due to needing to align decorator
      line too */
   position: absolute;
   left: var(--main-blocks-title-icon-offset-left);
-  z-index: 1; /* over decorator line */
+  z-index: 1;
+  /* over decorator line */
   color: var(--gray-medium);
 }
 
-#main h2::after{ /* extends the decorator line */
+#main h2::after {
+  /* extends the decorator line */
   height: calc(var(--row-blocks-padding-top) * 2);
   position: relative;
   top: calc(-1 * var(--row-blocks-padding-top));
@@ -147,31 +162,31 @@ li{
 }
 
 /**** minor tweaks on the icon fonts ****/
-#main h2 > .fa-graduation-cap{
+#main h2>.fa-graduation-cap {
   left: calc(var(--main-blocks-title-icon-offset-left) - 2pt);
   top: 2pt;
 }
 
-#main h2 > .fa-suitcase{
+#main h2>.fa-suitcase {
   top: 1pt;
 }
 
-#main h2 > .fa-folder-open{
+#main h2>.fa-folder-open {
   top: 1.5pt;
 }
 
 /**** individual row blocks (date - decorator - details) ****/
 
-.blocks{
+.blocks {
   display: flex;
   flex-flow: row nowrap;
 }
 
-.blocks > div{
+.blocks>div {
   padding-top: var(--row-blocks-padding-top);
 }
 
-.date{
+.date {
   flex: 0 0 var(--date-block-width);
   padding-top: calc(var(--row-blocks-padding-top) + 2.5pt) !important;
   padding-right: var(--decorator-horizontal-margin);
@@ -180,11 +195,11 @@ li{
   line-height: 1;
 }
 
-.date span{
+.date span {
   display: block;
 }
 
-.date span:nth-child(2)::before{
+.date span:nth-child(2)::before {
   position: relative;
   top: 1pt;
   right: 5.5pt;
@@ -193,7 +208,7 @@ li{
   content: '|';
 }
 
-.decorator{
+.decorator {
   flex: 0 0 0;
   position: relative;
   width: 2pt;
@@ -210,7 +225,7 @@ li{
  *
  */
 
-.decorator::before{
+.decorator::before {
   position: absolute;
   top: var(--decorator-outer-offset-top);
   left: var(--decorator-outer-offset-left);
@@ -222,7 +237,7 @@ li{
   background-color: #fff;
 }
 
-.decorator::after{
+.decorator::after {
   position: absolute;
   top: calc(var(--decorator-outer-offset-top) + var(--decorator-border-width));
   left: calc(var(--decorator-outer-offset-left) + var(--decorator-border-width));
@@ -234,57 +249,66 @@ li{
   background-color: var(--gray-medium);
 }
 
-.main-block> :last-child:not(.publication) .decorator{ /* slightly shortens it */
+.main-block> :last-child:not(.publication):not(.workplace) .decorator {
+  /* slightly shortens it */
   margin-bottom: 0.25in;
 }
-.main-block> :last-child.publication .decorator{ /* slightly shortens it */
+
+.main-block> :last-child.workplace> :last-child .decorator {
+  /* slightly shortens it */
+  margin-bottom: 0.25in;
+}
+
+.main-block> :last-child.publication .decorator {
+  /* slightly shortens it */
   margin-bottom: 0.1in;
 }
 
 /***** fine-tunes on the details block where the real juice is *****/
 
-.details{
+.details {
   flex: 1 0 0;
   padding-left: var(--decorator-horizontal-margin);
-  padding-top: calc(var(--row-blocks-padding-top) - 0.5pt) !important; /* not sure why but this is needed for better alignment */
+  padding-top: calc(var(--row-blocks-padding-top) - 0.5pt) !important;
+  /* not sure why but this is needed for better alignment */
 }
 
-.details h3{
+.details h3 {
   font-size: 9pt;
 }
 
-.main-block:not(.concise) .details div:not(.doi){
-  margin: 0.18in 0 0.1in 0; 
+.main-block:not(.concise) .details div:not(.doi) {
+  margin: 0.18in 0 0.1in 0;
 }
 
-.main-block:not(.concise) .blocks:last-child .details div{
+.main-block:not(.concise) .blocks:last-child .details div {
   margin-bottom: 0;
 }
 
-.main-block.concise .details div:not(.concise){
+.main-block.concise .details div:not(.concise) {
   /* use padding to work around the fact that margin doesn't affect floated
      neighboring elements */
   padding: 0.05in 0 0.07in 0;
 }
 
-.details .place{
+.details .place {
   float: left;
   font-size: 9pt;
 }
 
-.details h4.role{
+.details h4.role {
   float: left;
   font-size: 9pt;
   margin-top: 0.5pt;
   margin-bottom: 1pt;
 }
 
-.workplace > header{
+.workplace>header {
   margin-left: 25pt;
   margin-top: 1pt;
 }
 
-.workplace > header h3 {
+.workplace>header h3 {
   font-size: 9pt;
   color: var(--gray-dark);
 }
@@ -293,58 +317,46 @@ li{
   color: var(--gray-medium);
 }
 
-.details .location{
+.details .location {
   float: right;
   color: var(--gray-medium);
 }
 
-.details div{
+.details div {
   clear: both;
-}
-
-.details .location::before{
-  display: inline-block;
-  position: relative;
-  right: 3pt;
-  top: 0.25pt;
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit;
-  content: "\f041";
 }
 
 /***** fine-tunes on the lists... *****/
 
-#main ul{
+#main ul {
   padding-left: 0.07in;
   margin: 0.08in 0;
 }
 
-#main li{
+#main li {
   margin: 0 0 0.025in 0;
 }
 
 /****** customize list symbol style ******/
-#main li::before{
+#main li::before {
   position: relative;
   margin-left: -4.25pt;
   content: '• ';
   color: var(--gray-medium);
 }
 
-.details .concise ul{
+.details .concise ul {
   margin: 0 !important;
   -webkit-columns: 2;
   -moz-columns: 2;
   columns: 2;
 }
 
-.details .concise li{
+.details .concise li {
   margin: 0 !important;
 }
 
-.details .concise li{
+.details .concise li {
   margin-left: 0 !important;
 }
 
@@ -352,38 +364,42 @@ li{
 
 /* sidebar */
 
-#sidebar h2{
+#sidebar h2 {
   font-weight: 400;
   font-size: 11pt;
 }
 
-.side-block{
-  margin-top: 0.5in; 
+.side-block {
+  margin-top: 0.5in;
 }
 
-#contact ul{
+#contact ul {
   margin-top: 0.05in;
   padding-left: 0;
-  font-family: "Source Code Pro";
-  font-weight: 400;
   line-height: 1.75;
 }
 
-#contact li > i{
-  width: 9pt; /* for text alignment */
+#contact li>i {
+  width: 9pt;
+  /* for text alignment */
   text-align: right;
 }
 
-#skills{
+#skills {
   line-height: 1.5;
 }
 
-#skills ul{
+#skills ul {
   margin: 0.05in 0 0.15in;
   padding: 0;
 }
 
-#disclaimer{
+.skill-detail {
+  color: var(--gray-medium);
+  font-size: 7pt;
+}
+
+#disclaimer {
   position: absolute;
   bottom: var(--sidebar-horizontal-padding);
   right: var(--sidebar-horizontal-padding);
@@ -394,7 +410,7 @@ li{
   color: #777;
 }
 
-#disclaimer code{
+#disclaimer code {
   color: #666;
   font-family: "Source Code Pro";
   font-weight: 400;
