@@ -223,7 +223,7 @@ li{
   background-color: #555;
 }
 
-.blocks:last-child .decorator{ /* slightly shortens it */
+.main-block> :last-child .decorator{ /* slightly shortens it */
   margin-bottom: 0.25in;
 }
 
@@ -262,8 +262,29 @@ li{
   font-size: 7.5pt;
 }
 
+.details h4.role{
+  float: left;
+  font-size: 9pt;
+  margin-top: 0.5pt;
+  margin-bottom: 1pt;
+}
+
+.workplace > header{
+  margin-left: 25pt;
+  margin-top: 1pt;
+}
+
+.workplace > header h3 {
+  font-size: 9pt;
+}
+
+.workplace-info {
+  color: #888;
+}
+
 .details .location{
   float: right;
+  color: #888;
 }
 
 .details div{
