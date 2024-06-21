@@ -67,7 +67,7 @@ li{
   float: left;
   width: var(--main-width);
   padding: 0.25in 0.25in 0 0.25in;
-  font-size: 7pt;
+  font-size: 8pt;
 }
 
 #sidebar{
@@ -103,7 +103,7 @@ li{
 }
 
 .subtitle{
-  font-size: 8pt;
+  font-size: 10pt;
 }
 
 /*** categorial blocks ***/
@@ -234,8 +234,11 @@ li{
   background-color: var(--gray-medium);
 }
 
-.main-block> :last-child .decorator{ /* slightly shortens it */
+.main-block> :last-child:not(.publication) .decorator{ /* slightly shortens it */
   margin-bottom: 0.25in;
+}
+.main-block> :last-child.publication .decorator{ /* slightly shortens it */
+  margin-bottom: 0.1in;
 }
 
 /***** fine-tunes on the details block where the real juice is *****/
@@ -250,7 +253,7 @@ li{
   font-size: 9pt;
 }
 
-.main-block:not(.concise) .details div{
+.main-block:not(.concise) .details div:not(.doi){
   margin: 0.18in 0 0.1in 0; 
 }
 
@@ -266,7 +269,7 @@ li{
 
 .details .place{
   float: left;
-  font-size: 7.5pt;
+  font-size: 9pt;
 }
 
 .details h4.role{
