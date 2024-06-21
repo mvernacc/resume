@@ -27,6 +27,13 @@
   --date-block-width: 0.6in;
 
   --main-blocks-title-icon-offset-left: -19pt;
+
+  --color-dark: hsl(225deg, 66%, 35%);
+  --color-medium: hsl(225deg, 66%, 50%);
+  --color-light: hsl(225deg, 66%, 90%);
+
+  --gray-dark: #555;
+  --gray-medium: #888;
 }
 
 body{
@@ -42,7 +49,14 @@ body{
 
 h1, h2, h3{
   margin: 0;
-  color: #000;
+}
+
+h1, h2, h3, h4{
+  font-weight: 300;
+}
+
+h1, h3, h4{
+  color: var(--color-dark);
 }
 
 li{
@@ -62,17 +76,13 @@ li{
   width: var(--sidebar-width);
   height: 100%;
   padding: 0.6in var(--sidebar-horizontal-padding);
-  background-color: #f2f2f2;
+  background-color: var(--color-light);
   font-size: 8.5pt;
 }
 
 /* main */
 
 /** big title **/
-#title, h1, h2{
-  text-transform: uppercase;
-}
-
 #title{
   position: relative;
   left: 0.55in;
@@ -84,6 +94,7 @@ li{
   font-weight: 300;
   font-size: 18pt;
   line-height: 1.5;
+  color: var(--color-dark);
 }
 
 #title h1 strong{
@@ -108,7 +119,7 @@ li{
   left: calc((var(--date-block-width) + var(--decorator-horizontal-margin)));
   font-weight: 400;
   font-size: 11pt;
-  color: #555;
+  color: var(--gray-medium);
 }
 
 #main h2 > i{
@@ -118,7 +129,7 @@ li{
   position: absolute;
   left: var(--main-blocks-title-icon-offset-left);
   z-index: 1; /* over decorator line */
-  color: #444;
+  color: var(--gray-medium);
 }
 
 #main h2::after{ /* extends the decorator line */
@@ -220,7 +231,7 @@ li{
   width: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
   height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
   border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);
-  background-color: #555;
+  background-color: var(--gray-medium);
 }
 
 .main-block> :last-child .decorator{ /* slightly shortens it */
@@ -233,10 +244,6 @@ li{
   flex: 1 0 0;
   padding-left: var(--decorator-horizontal-margin);
   padding-top: calc(var(--row-blocks-padding-top) - 0.5pt) !important; /* not sure why but this is needed for better alignment */
-}
-
-.details header{
-  color: #000;
 }
 
 .details h3{
@@ -276,15 +283,16 @@ li{
 
 .workplace > header h3 {
   font-size: 9pt;
+  color: var(--gray-dark);
 }
 
 .workplace-info {
-  color: #888;
+  color: var(--gray-medium);
 }
 
 .details .location{
   float: right;
-  color: #888;
+  color: var(--gray-medium);
 }
 
 .details div{
@@ -319,6 +327,7 @@ li{
   position: relative;
   margin-left: -4.25pt;
   content: '• ';
+  color: var(--gray-medium);
 }
 
 .details .concise ul{
@@ -340,7 +349,7 @@ li{
 
 /* sidebar */
 
-#sidebar h1{
+#sidebar h2{
   font-weight: 400;
   font-size: 11pt;
 }
