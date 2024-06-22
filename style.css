@@ -23,6 +23,8 @@
   --decorator-outer-dim: 9px;
   --decorator-border: 1px solid #ccc;
 
+  --heading-margin-left: 25pt;
+
   --row-blocks-padding-top: 5pt;
   --date-block-width: 0.6in;
 
@@ -78,7 +80,7 @@ a {
 #main {
   float: left;
   width: var(--main-width);
-  padding: 0.25in 0.25in 0 0.25in;
+  padding: 0.30in 0.25in 0 0.25in;
   font-size: 9pt;
 }
 
@@ -98,8 +100,8 @@ a {
 /** big title **/
 #title {
   position: relative;
-  left: 0.55in;
-  margin-bottom: 0.1in;
+  left: var(--heading-margin-left);
+  margin-bottom: 0.15in;
   line-height: 1.2;
 }
 
@@ -133,51 +135,11 @@ a {
 #main h2 {
   position: relative;
   top: var(--row-blocks-padding-top);
-  /* XXX: 0.5px for aligning fx printing */
-  left: calc((var(--date-block-width) + var(--decorator-horizontal-margin)));
+  left: var(--heading-margin-left);
+  padding-bottom: 4pt;
   font-weight: 400;
   font-size: 11pt;
   color: var(--gray-medium);
-}
-
-#main h2>i {
-  /* use absolute position to prevent icon's width from misaligning title */
-  /* assigning a fixed width here is no better due to needing to align decorator
-     line too */
-  position: absolute;
-  left: var(--main-blocks-title-icon-offset-left);
-  z-index: 1;
-  /* over decorator line */
-  color: var(--gray-medium);
-}
-
-#main h2::after {
-  /* extends the decorator line */
-  height: calc(var(--row-blocks-padding-top) * 2);
-  position: relative;
-  top: calc(-1 * var(--row-blocks-padding-top));
-  /* XXX: 0.5px for aligning fx printing */
-  left: calc(-1 * var(--decorator-horizontal-margin));
-  display: block;
-  border-left: var(--decorator-border);
-  z-index: 0;
-  line-height: 0;
-  font-size: 0;
-  content: ' ';
-}
-
-/**** minor tweaks on the icon fonts ****/
-#main h2>.fa-graduation-cap {
-  left: calc(var(--main-blocks-title-icon-offset-left) - 2pt);
-  top: 2pt;
-}
-
-#main h2>.fa-suitcase {
-  top: 1pt;
-}
-
-#main h2>.fa-folder-open {
-  top: 1.5pt;
 }
 
 /**** individual row blocks (date - decorator - details) ****/
@@ -309,7 +271,7 @@ a {
 }
 
 .workplace>header {
-  margin-left: 25pt;
+  margin-left: var(--heading-margin-left);
   margin-top: 1pt;
 }
 
