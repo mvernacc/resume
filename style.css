@@ -74,7 +74,7 @@ li {
   float: left;
   width: var(--main-width);
   padding: 0.25in 0.25in 0 0.25in;
-  font-size: 8pt;
+  font-size: 9pt;
 }
 
 #sidebar {
@@ -94,7 +94,7 @@ li {
 #title {
   position: relative;
   left: 0.55in;
-  margin-bottom: 0.3in;
+  margin-bottom: 0.1in;
   line-height: 1.2;
 }
 
@@ -274,11 +274,11 @@ li {
 }
 
 .details h3 {
-  font-size: 9pt;
+  font-size: 10pt;
 }
 
 .main-block:not(.concise) .details div:not(.doi) {
-  margin: 0.18in 0 0.1in 0;
+  margin: 0.18in 0 0.05in 0;
 }
 
 .main-block:not(.concise) .blocks:last-child .details div {
@@ -293,12 +293,12 @@ li {
 
 .details .place {
   float: left;
-  font-size: 9pt;
+  font-size: 10pt;
 }
 
 .details h4.role {
   float: left;
-  font-size: 9pt;
+  font-size: 10pt;
   margin-top: 0.5pt;
   margin-bottom: 1pt;
 }
@@ -309,7 +309,7 @@ li {
 }
 
 .workplace>header h3 {
-  font-size: 9pt;
+  font-size: 10pt;
   color: var(--gray-dark);
 }
 
@@ -330,7 +330,7 @@ li {
 
 #main ul {
   padding-left: 0.07in;
-  margin: 0.08in 0;
+  margin: 0.02in 0;
 }
 
 #main li {
