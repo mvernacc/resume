@@ -12,23 +12,12 @@
   --page-height: 11in;
   --main-width: 6.4in;
   --sidebar-width: calc(var(--page-width) - var(--main-width));
-  --decorator-horizontal-margin: 0.2in;
 
   --sidebar-horizontal-padding: 0.2in;
 
-  /* XXX: using px for very good precision control */
-  --decorator-outer-offset-top: 10px;
-  --decorator-outer-offset-left: -5.5px;
-  --decorator-border-width: 1px;
-  --decorator-outer-dim: 9px;
-  --decorator-border: 1px solid #ccc;
-
-  --heading-margin-left: 25pt;
+  --heading-margin-left: 0pt;
 
   --row-blocks-padding-top: 5pt;
-  --date-block-width: 0.6in;
-
-  --main-blocks-title-icon-offset-left: -19pt;
 
   --color-dark: hsl(225deg, 66%, 35%);
   --color-light: hsl(225deg, 66%, 90%);
@@ -141,7 +130,7 @@ a {
   color: var(--gray-medium);
 }
 
-/**** individual row blocks (date - decorator - details) ****/
+/**** individual row blocks ****/
 
 .blocks {
   display: flex;
@@ -152,96 +141,29 @@ a {
   padding-top: var(--row-blocks-padding-top);
 }
 
-.date {
-  flex: 0 0 var(--date-block-width);
-  padding-top: calc(var(--row-blocks-padding-top) + 2.5pt) !important;
-  padding-right: var(--decorator-horizontal-margin);
-  font-size: 7pt;
-  text-align: right;
-  line-height: 1;
-  color: var(--gray-medium);
-}
-
-.date span {
-  display: block;
-}
-
-.date span:nth-child(2)::before {
-  position: relative;
-  top: 1pt;
-  right: 5.5pt;
-  display: block;
-  height: 10pt;
-  content: '|';
-}
-
-.decorator {
-  flex: 0 0 0;
-  position: relative;
-  width: 2pt;
-  min-height: 100%;
-  border-left: var(--decorator-border);
-}
-
-/*
- * XXX: Use two filled circles to achieve the circle-with-white-border effect.
- * The normal technique of only using one pseudo element and
- * border: 1px solid white; style makes firefox erroneously either:
- * 1) overflows the grayshade background (if no background-clip is set), or
- * 2) shows decorator line which should've been masked by the white border
- *
- */
-
-.decorator::before {
-  position: absolute;
-  top: var(--decorator-outer-offset-top);
-  left: var(--decorator-outer-offset-left);
-  content: ' ';
-  display: block;
-  width: var(--decorator-outer-dim);
-  height: var(--decorator-outer-dim);
-  border-radius: calc(var(--decorator-outer-dim) / 2);
-  background-color: #fff;
-}
-
-.decorator::after {
-  position: absolute;
-  top: calc(var(--decorator-outer-offset-top) + var(--decorator-border-width));
-  left: calc(var(--decorator-outer-offset-left) + var(--decorator-border-width));
-  content: ' ';
-  display: block;
-  width: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
-  height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
-  border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);
-  background-color: var(--gray-medium);
-}
-
-.main-block> :last-child:not(.publication):not(.workplace) .decorator {
-  /* slightly shortens it */
-  margin-bottom: 0.25in;
-}
-
-.main-block> :last-child.workplace> :last-child .decorator {
-  /* slightly shortens it */
-  margin-bottom: 0.25in;
-}
-
-.main-block> :last-child.publication .decorator {
-  /* slightly shortens it */
-  margin-bottom: 0.1in;
-}
-
 /***** fine-tunes on the details block where the real juice is *****/
 
 .details {
   flex: 1 0 0;
-  padding-left: var(--decorator-horizontal-margin);
+  padding-left: 0;
   padding-top: calc(var(--row-blocks-padding-top) - 0.5pt) !important;
   /* not sure why but this is needed for better alignment */
 }
 
 .details h3 {
   font-size: 10pt;
+}
+
+.blocks.publication .details header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8pt;
+}
+
+.blocks.publication .details .date-range {
+  float: none;
+  white-space: nowrap;
 }
 
 .main-block:not(.concise) .details div:not(.doi) {
@@ -284,7 +206,7 @@ a {
   color: var(--gray-medium);
 }
 
-.details .location {
+.details .date-range {
   float: right;
   color: var(--gray-medium);
 }
