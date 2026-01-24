@@ -65,7 +65,7 @@ a {
 #main {
   float: left;
   width: var(--main-width);
-  padding: 0.30in 0.25in 0 0.25in;
+  padding: 0.30in 0.4in 0 0.4in;
   font-size: 9pt;
 }
 
@@ -204,16 +204,23 @@ a {
 
 .workplace>header {
   margin-left: var(--heading-margin-left);
-  margin-top: 1pt;
+  margin-top: 4pt;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12pt;
 }
 
 .workplace>header h3 {
-  font-size: 10pt;
+  font-size: 11pt;
   color: var(--gray-dark);
+  flex: 0 0 auto;
 }
 
 .workplace-info {
   color: var(--gray-medium);
+  flex: 1 1 auto;
+  text-align: right;
 }
 
 .details .date-range {
