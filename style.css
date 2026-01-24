@@ -47,6 +47,11 @@ h4 {
   font-weight: 300;
 }
 
+b,
+strong {
+  font-weight: 600;
+}
+
 h1,
 h3,
 h4 {
