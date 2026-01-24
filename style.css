@@ -169,6 +169,10 @@ a {
   font-size: 10pt;
 }
 
+.details p {
+  margin: 2pt 0 0 0;
+}
+
 .blocks.publication .details header {
   display: flex;
   align-items: baseline;
@@ -235,6 +239,8 @@ a {
 
 .details div {
   clear: both;
+  padding-left: 1em;
+  text-indent: -1em;
 }
 
 /***** fine-tunes on the lists... *****/
