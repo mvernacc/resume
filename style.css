@@ -170,7 +170,7 @@ a {
 }
 
 .details p {
-  margin: 2pt 0 0 0;
+  margin: 2pt 0 0 1em;
 }
 
 .blocks.publication .details header {
@@ -183,10 +183,6 @@ a {
 .blocks.publication .details .date-range {
   float: none;
   white-space: nowrap;
-}
-
-.main-block:not(.concise) .details div:not(.doi) {
-  margin: 0.18in 0 0.05in 0;
 }
 
 .main-block:not(.concise) .blocks:last-child .details div {
@@ -237,7 +233,7 @@ a {
   color: var(--gray-medium);
 }
 
-.details div {
+:not(.publication)>.details p {
   clear: both;
   padding-left: 1em;
   text-indent: -1em;
