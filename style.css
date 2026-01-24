@@ -10,10 +10,7 @@
 :root {
   --page-width: 8.5in;
   --page-height: 11in;
-  --main-width: 6.4in;
-  --sidebar-width: calc(var(--page-width) - var(--main-width));
-
-  --sidebar-horizontal-padding: 0.2in;
+  --main-width: var(--page-width);
 
   --heading-margin-left: 0pt;
 
@@ -72,17 +69,6 @@ a {
   font-size: 9pt;
 }
 
-#sidebar {
-  float: right;
-  position: relative;
-  /* for disclaimer */
-  width: var(--sidebar-width);
-  height: 100%;
-  padding: 0.6in var(--sidebar-horizontal-padding);
-  background-color: var(--color-light);
-  font-size: 8.5pt;
-}
-
 /* main */
 
 /** big title **/
@@ -112,6 +98,30 @@ a {
 
 .subtitle {
   font-size: 10pt;
+}
+
+#title .contact-info {
+  margin-top: 2pt;
+  font-size: 8.5pt;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+#title .contact-item {
+  display: inline;
+}
+
+#title .contact-item::after {
+  content: " | ";
+}
+
+#title .contact-item:last-child::after {
+  content: "";
+}
+
+#title .selected-skills {
+  margin-top: 2pt;
+  font-size: 9pt;
 }
 
 /*** categorial blocks ***/
@@ -247,19 +257,6 @@ a {
 
 .details .concise li {
   margin-left: 0 !important;
-}
-
-
-
-/* sidebar */
-
-#sidebar h2 {
-  font-weight: 400;
-  font-size: 11pt;
-}
-
-.side-block {
-  margin-top: 0.5in;
 }
 
 #contact ul {
