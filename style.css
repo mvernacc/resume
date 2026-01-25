@@ -71,7 +71,6 @@ a {
 
 /** big title **/
 #title {
-  margin-bottom: 0.10in;
   line-height: 1.2;
 }
 
@@ -110,7 +109,7 @@ a {
 /*** categorial blocks ***/
 
 .main-block {
-  margin-top: 0.1in;
+  margin-top: 0.07in;
 }
 
 #main h2 {
@@ -140,7 +139,7 @@ a {
 .entry h4 {
   font-size: 11pt;
   margin-top: 0.5pt;
-  margin-bottom: 1pt;
+  margin-bottom: 0pt;
 }
 
 .entry .date-range {
@@ -149,15 +148,10 @@ a {
 }
 
 .entry p {
-  margin: 2pt 0 0 1em;
+  margin: 3pt 0 0 1em;
   hyphens: none;
   overflow-wrap: normal;
   word-break: normal;
-}
-
-.entry:not(.publication) p {
-  padding-left: 1em;
-  text-indent: -1em;
 }
 
 .education-degree {
