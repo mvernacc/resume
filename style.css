@@ -64,7 +64,7 @@ a {
 #main {
   width: var(--page-width);
   padding: 0.30in 0.4in 0 0.4in;
-  font-size: 10pt;
+  font-size: 9.5pt;
 }
 
 /* main */
@@ -150,6 +150,9 @@ a {
 
 .entry p {
   margin: 2pt 0 0 1em;
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .entry:not(.publication) p {
